@@ -1,6 +1,7 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin") 
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const path = require('path');
+const path = require("path");
+const fs = require("fs");
 
 // module.exports = {
 //   entry: {
@@ -34,12 +35,32 @@ const path = require('path');
 //   ]
 // };
 
+// fs.readdir('./src', (err, files) => {
+//   if (err) {
+//     console.error('Error', err)
+//   } else {
+//     files = files.filter(item => item.includes('.html')).map((fileName => path.basename(fileName, '.html')));
+//     console.log(files);
+//   }
+// })
+
+let files = fs
+  .readdirSync("./src")
+  .filter((item) => item.includes(".html"))
+  .map((fileName) => path.basename(fileName, ".html"));
+
 function collectorPlugins(htmls, difrentPlugins, objCongig) {
-  const arrHtmlPlugins = htmls.map(item => new HtmlWebpackPlugin({
-    template: `./src/${item}.html`,
-    chunks: item === 'index' ? ['main'] : ['main', ...htmls.filter(item => item !== 'index')],
-    filename: `${item}.html`
-  }))
+  const arrHtmlPlugins = htmls.map(
+    (item) =>
+      new HtmlWebpackPlugin({
+        template: `./src/${item}.html`,
+        chunks:
+          item === "index"
+            ? ["main"]
+            : ["main", ...htmls.filter((item) => item !== "index")],
+        filename: `${item}.html`,
+      })
+  );
 
   objCongig.plugins = [...arrHtmlPlugins, ...difrentPlugins];
 }
@@ -47,37 +68,37 @@ function collectorPlugins(htmls, difrentPlugins, objCongig) {
 module.exports = (env, argv) => {
   const config = {
     entry: {
-      main:"./src/index.js",
-      page1:"./src/page1.js",
+      main: "./src/index.js",
+      page1: "./src/page1.js",
     },
     devServer: {
-      static: path.resolve(__dirname, './dist'),
+      static: path.resolve(__dirname, "./dist"),
       compress: true,
       hot: true,
       port: 8080,
-      open: true
+      open: true,
     },
-    mode: 'development',
+    mode: "development",
     output: {
-      filename: '[name].js',
-      path: __dirname + '/dist'
+      filename: "[name].js",
+      path: __dirname + "/dist",
     },
     module: {
       rules: [
         {
           test: /\.css$/i,
-          use: ["style-loader", "css-loader"]
+          use: ["style-loader", "css-loader"],
         },
         {
           test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
-          type: 'asset/resource'
+          type: "asset/resource",
         },
-      ]
+      ],
     },
-    plugins: [] // don't put here plugins, use function below
-  }
+    plugins: [], // don't put here plugins, use function below
+  };
 
-  collectorPlugins(['index', 'page1'], [new CleanWebpackPlugin()], config)
+  collectorPlugins(files, [new CleanWebpackPlugin()], config);
 
   return config;
-}
+};
