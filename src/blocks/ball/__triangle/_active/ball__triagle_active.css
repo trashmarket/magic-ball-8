@@ -1,0 +1,8 @@
+.ball__triagle_active {
+  transform: translate( 86px,-195%);
+  background-color: var(--blue);
+  width: 183px;
+  height: 100px;
+  animation: none;
+  opacity: .9;
+}

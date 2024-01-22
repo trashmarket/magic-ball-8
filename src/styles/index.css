@@ -1,3 +1,12 @@
-body {
-    background-color: beige;
-}
+@import url(./fonts.css);
+@import url(./normalize.css);
+@import url(../blocks/page/page.css);
+@import url(../blocks/ball/ball.css);
+@import url(../blocks/ball/__close-icon/ball__close-icon.css);
+@import url(../blocks/ball/__close-icon/_active/ball__close-icon_active.css);
+@import url(../blocks/ball/__title/ball__title.css);
+@import url(../blocks/ball/__triangle/ball__triangle.css);
+@import url(../blocks/ball/__triangle/_active/ball__triagle_active.css);
+@import url(../blocks/ball/__form/ball__form.css);
+@import url(../blocks/ball/__form/_active/ball__form_active.css);
+@import url(../blocks/ball/__form-input/ball__form-input.css);

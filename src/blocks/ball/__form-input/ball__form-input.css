@@ -1,0 +1,9 @@
+.ball__form-input {
+  background-color: var(--blue);
+  border: none;
+  color: #fff;
+}
+
+.ball__form-input::placeholder {
+  color: #fff;
+}

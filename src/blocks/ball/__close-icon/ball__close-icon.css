@@ -1,0 +1,8 @@
+.ball__close-icon {
+  display: none;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: -79px;
+  right: -87px;
+}

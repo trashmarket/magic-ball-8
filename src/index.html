@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document-index</title>
-</head>
-<body>
-    <header id="header"></header>
-    <img src="<%=require('./Magic_eight_ball.png') %>" alt="hello ball">
-</body>
+  </head>
+  <body class="page">
+    <template id="ball">
+      <div class="ball">
+        <h1 class="ball__title">Magic Ball 8</h1>
+        <img
+          width="437"
+          height="437"
+          class="ball__img"
+          src="<%=require('./Magic_eight_ball.png') %>"
+          alt="hello ball"
+        />
+        <div class="ball__triangle">
+          <img
+            class="ball__close-icon"
+            src="<%=require('./close-Icon.svg') %>"
+            alt="close icone"
+          />
+          <form class="ball__form">
+            <input
+              class="ball__form-input"
+              name="queistion"
+              type="text"
+              placeholder="Asc a queistion"
+              autofocus
+            />
+          </form>
+        </div>
+      </div>
+    </template>
+  </body>
 </html>

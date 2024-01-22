@@ -1,0 +1,19 @@
+.ball__triangle {
+  width: 0;
+	height: 0;
+  position: absolute;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 80px solid var(--blue);
+  top: 296px;
+  right: 168px;
+  opacity: 1;
+  animation: opacity 3s linear 2s infinite;
+  cursor: pointer;
+  transition: all .8s;
+}
+
+@keyframes opacity {
+  50% { opacity: 0;}
+  100% {opacity: 1;}
+}

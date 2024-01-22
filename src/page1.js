@@ -1,2 +1,14 @@
 import './styles/page1.css';
-alert('hello bro!');
+
+const wepCheckPack = () => {
+  const alpha = 'dog-wolf';
+
+  const Nik = 'Nik';
+
+  document.body.textContent(alpha + Nik)
+
+  const f = new Promise()
+f.then((res) => res());
+};
+
+wepCheckPack();

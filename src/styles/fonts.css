@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Kaushan';
+  src: url(../fonts/kaushan.woff2) format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Open sans';
+  src: url(../fonts/opne-sans.woff2) format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
