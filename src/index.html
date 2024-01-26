@@ -6,6 +6,16 @@
     <title>Document-index</title>
   </head>
   <body class="page">
+    <template id="AI">
+      <form class="keyAI">
+        <div class="keyAI__box">
+          <span class="keyAI__slider"></span>
+        </div>
+        <label class="keyAI__label" for="key">key for ChatGPT</label>
+        <input class="keyAI__input-text" id="key" name="key" type="text" />
+        <button type="submit" class="keyAI__button">></button>
+      </form>      
+    </template>
     <template id="ball">
       <div class="ball">
         <h1 class="ball__title">Magic Ball 8</h1>
@@ -30,7 +40,16 @@
               placeholder="Asc a queistion"
               autofocus
             />
+            <button type="submit" class="ball__form-button">></button>
           </form>
+          <img
+            class="ball__loader"
+            width="52"
+            height="52"
+            src="<%=require('./tube-spinner.svg')%>"
+            alt="spiner"
+          />
+          <p class="ball__p"></p>
         </div>
       </div>
     </template>

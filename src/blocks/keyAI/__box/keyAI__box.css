@@ -1,0 +1,11 @@
+.keyAI__box {
+  width: 60px;
+  height: 34px;
+  padding: 4px;
+  box-sizing: border-box;
+  border-radius: 34px;
+  background-color: #8bf6cd;
+  cursor: pointer;
+  margin-bottom: 16px;
+  box-shadow: 4px 4px 6px rgb(88, 84, 84);
+}

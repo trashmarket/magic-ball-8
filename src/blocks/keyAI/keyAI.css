@@ -1,0 +1,9 @@
+.keyAI {
+  background-color: inherit;
+  opacity: .9;
+  width: 320px;
+  min-height: 200px;
+  position: absolute;
+  right: 12px;
+  border-radius: 9px;
+}

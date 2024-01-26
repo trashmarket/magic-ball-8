@@ -1,0 +1,7 @@
+.keyAI__input-text {
+  display: none;
+  border-radius: 32px;
+  width: 100%;
+  box-shadow: 4px 4px 6px rgb(88, 84, 84);
+  border: 1px solid #000;
+}

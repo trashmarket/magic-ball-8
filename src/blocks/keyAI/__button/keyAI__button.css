@@ -1,0 +1,10 @@
+.keyAI__button {
+  display: none;
+  cursor: pointer;
+  background-color: inherit;
+  border: 1px solid #000;
+  width: 50px;
+  margin-top: 10px;
+  border-radius: 32px;
+  box-shadow: 4px 4px 6px rgb(88, 84, 84);
+}

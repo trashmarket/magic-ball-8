@@ -8,5 +8,14 @@
 @import url(../blocks/ball/__triangle/ball__triangle.css);
 @import url(../blocks/ball/__triangle/_active/ball__triagle_active.css);
 @import url(../blocks/ball/__form/ball__form.css);
+@import url(../blocks/ball/__form-button/ball__form-button.css);
 @import url(../blocks/ball/__form/_active/ball__form_active.css);
 @import url(../blocks/ball/__form-input/ball__form-input.css);
+@import url(../blocks/ball/__loader/ball__loader.css);
+@import url(../blocks/ball/__loader/_active/ball__loader_active.css);
+@import url(../blocks/keyAI/keyAI.css);
+@import url(../blocks/keyAI/__box/keyAI__box.css);
+@import url(../blocks/keyAI/__slider/keyAI__slider.css);
+@import url(../blocks/keyAI/__slider/_active/keyAI__slider_active.css);
+@import url(../blocks/keyAI/__input-text/keyAI__input-text.css);
+@import url(../blocks/keyAI/__button/keyAI__button.css);

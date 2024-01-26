@@ -1,6 +1,5 @@
 .ball__triangle {
   width: 0;
-	height: 0;
   position: absolute;
 	border-left: 50px solid transparent;
 	border-right: 50px solid transparent;

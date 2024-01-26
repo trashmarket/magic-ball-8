@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const path = require("path");
 const fs = require("fs");
 
@@ -48,17 +49,19 @@ module.exports = (env, argv) => {
         {
           test: /\.js$/,
           use: "babel-loader",
-          exclude: path.join(__dirname, 'node_modules')
+          exclude: path.join(__dirname, "node_modules"),
         },
         {
           test: /\.css$/i,
           use: [
-            (argv.mode === 'production') ? MiniCssExtractPlugin.loader : "style-loader",
+            argv.mode === "production"
+              ? MiniCssExtractPlugin.loader
+              : "style-loader",
             {
               loader: "css-loader",
               options: {
                 importLoaders: 1,
-              }
+              },
             },
             "postcss-loader",
           ],
@@ -74,7 +77,18 @@ module.exports = (env, argv) => {
 
   collectorPlugins(
     files,
-    [new CleanWebpackPlugin(), (argv.mode === 'production') && new MiniCssExtractPlugin()],
+    [
+      new CleanWebpackPlugin(),
+      argv.mode === "production" && new MiniCssExtractPlugin(),
+      new CopyPlugin({
+        patterns: [
+          {
+            from: path.resolve(__dirname, "src/static-data", "data.json"),
+            to: "static-data",
+          },
+        ],
+      }),
+    ],
     config
   );
 
