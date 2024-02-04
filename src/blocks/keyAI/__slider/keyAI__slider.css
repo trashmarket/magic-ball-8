@@ -5,4 +5,5 @@
   background-color: #fff;
   transition: .4s;
   border-radius: 50%;
+  cursor: pointer;
 }

@@ -5,7 +5,7 @@ import {
   BALL_FORM_ACTIVE,
   BALL_CLOSE_ICONE,
   BALL_CLOSE_ICON_ACTIVE,
-  BALL__P,
+  BALL_P,
   BALL_LOADER,
   BALL_LOADER_ACTIVE,
   redux
@@ -26,7 +26,7 @@ export default class Ball {
     );
     this._page = document.querySelector(glueTheDote(pageSelector));
     this._callback = callback;
-    this._p = this._ballTriangle.querySelector(glueTheDote(BALL__P));
+    this._p = this._ballTriangle.querySelector(glueTheDote(BALL_P));
     this._loader = this._ballTriangle.querySelector(glueTheDote(BALL_LOADER));
   }
 
@@ -69,7 +69,6 @@ export default class Ball {
   render() {
     this._page.append(this._template);
     this._ballTriangle.addEventListener("click", this.handle);
-    this._closeIcon.addEventListener("click", this.handle);
     this._form.addEventListener("submit", this.handleSubmite);
   }
 

@@ -8,10 +8,28 @@ const BALL_FORM_ACTIVE = "ball__from_active";
 const BALL_CLOSE_ICON_ACTIVE = "ball__close-icon_active";
 const BALL_LOADER = "ball__loader";
 const BALL_LOADER_ACTIVE = "ball__loader_active";
-const BASE_URL_API = 'http://localhost:8080/';
-const BALL__P = "ball__p";
+const BASE_URL_API = 'http://localhost:';
+const BALL_P = "ball__p";
+const TEMPLATE_AI_ID = "Ai";
+const KEYAI = "keyAI";
+const KEYAI_SLIDER = "keyAI__slider";
+const KEYAI_SLIDER_ACTIVE = "keyAI__slider_active";
+const KEYAI_BOX = "keyAI__box";
+const KEYAI_INPUT_TEXT = "keyAI__input-text";
+const KEYAI_INPUT_TEXT_ACTIVE = "keyAI__input-text_active";
+const KEYAI_BUTTON = "keyAI__button";
+const KEYAI_BUTTON_ACTIVE = "keyAI__button_active";
 
 export {
+  KEYAI,
+  KEYAI_BUTTON_ACTIVE,
+  KEYAI_BUTTON,
+  KEYAI_INPUT_TEXT_ACTIVE,
+  KEYAI_INPUT_TEXT,
+  KEYAI_BOX,
+  KEYAI_SLIDER_ACTIVE,
+  KEYAI_SLIDER,
+  TEMPLATE_AI_ID,
   PAGE_SELECTOR,
   TEMPLATE_ID,
   BALL_TRIANGLE,
@@ -21,7 +39,7 @@ export {
   BALL_CLOSE_ICONE,
   BALL_CLOSE_ICON_ACTIVE,
   BASE_URL_API,
-  BALL__P,
+  BALL_P,
   BALL_LOADER,
   BALL_LOADER_ACTIVE,
 };

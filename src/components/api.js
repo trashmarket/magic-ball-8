@@ -13,9 +13,16 @@ export default class Api {
     return Promise.reject(`Ошибка: ${res.status}`);
   }
 
-  getFetch(payload) {
-    return fetch(this._option.baseUrl + payload, {
+  getFetch(payload, port) {
+    return fetch(this._option.baseUrl + port + '/' + payload, {
       headers: this._option.headers,
+    }).then(this._checkRes);
+  }
+
+  postFetch(payload, port) {
+    return fetch(this._option.baseUrl + port + '/' + payload, {
+      headers: this._option.headers,
+      method: 'POST',
     }).then(this._checkRes);
   }
 }

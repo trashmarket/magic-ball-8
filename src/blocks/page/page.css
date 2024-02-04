@@ -1,4 +1,6 @@
 .page {
   font-family: 'Open sans', Arial, Helvetica, sans-serif;
   background-color: var(--limeColor);
+  max-width: 1450px;
+  margin: auto;
 }
