@@ -1,3 +1,4 @@
 .ball__close-icon_active {
   display: block;
+  cursor: pointer;
 }

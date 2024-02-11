@@ -19,10 +19,12 @@ export default class Api {
     }).then(this._checkRes);
   }
 
-  postFetch(payload, port) {
+  postFetch(payload, port, body) {
+
     return fetch(this._option.baseUrl + port + '/' + payload, {
       headers: this._option.headers,
       method: 'POST',
+      body: JSON.stringify(body)
     }).then(this._checkRes);
   }
 }

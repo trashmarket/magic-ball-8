@@ -8,6 +8,7 @@
 @import url(../blocks/ball/__triangle/ball__triangle.css);
 @import url(../blocks/ball/__triangle/_active/ball__triagle_active.css);
 @import url(../blocks/ball/__form/ball__form.css);
+@import url(../blocks/ball/__img/ball__img.css);
 @import url(../blocks/ball/__form-button/ball__form-button.css);
 @import url(../blocks/ball/__form/_active/ball__form_active.css);
 @import url(../blocks/ball/__form-input/ball__form-input.css);

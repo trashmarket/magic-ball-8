@@ -1,5 +1,11 @@
 .ball {
   width: 437px;
-  margin: 65px auto;
   position: relative;
+  margin-left: 12.13%;
 }
+
+/* @media screen and (max-width: 600px) {
+  .ball {
+    width: 100%;
+  }
+} */

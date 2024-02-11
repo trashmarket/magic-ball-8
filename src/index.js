@@ -19,28 +19,36 @@ const api = new Api({
 });
 
 const aiForm = new AiForm(page, function () {
-  api
-    .postFetch("chat", "3001")
-    .then((res) => console.log(res))
-    .catch((err) => console.log(err));
+  localStorage.setItem('keyChat', this.input.value);
+
+  ballMagic.methodApi = "POST";
 });
 
 aiForm.render();
 
-const ballMagic = new Ball(TEMPLATE_ID, PAGE_SELECTOR, function () {
-  const inputQuestion = this._form.elements["queistion"].value
-    .split(" ")
-    .join("+");
+const ballMagic = new Ball(TEMPLATE_ID, PAGE_SELECTOR, function (method) {
+  const inputQuestion = this._form.elements["queistion"].value;
 
-  api
-    .getFetch(`static-data/data.json`, "8080")
-    .then((res) => {
-      setTimeout(() => {
-        this.setRequest();
-        this.typingText(res.choices[0].message.content);
-      }, 1000);
-    })
-    .catch((err) => console.log(err));
+  const body = {
+    apiKey: localStorage.getItem('keyChat') && aiForm.input.value,
+  };
+
+  method === "GET" &&
+    api
+      .getFetch(`static-data/data.json`, "8080")
+      .then((res) => {
+        setTimeout(() => {
+          this.setRequest();
+          this.typingText(res.choices[0].message.content);
+        }, 1000);
+      })
+      .catch((err) => console.log(err));
+
+  method === "POST" &&
+    api
+      .postFetch("chat", "3001", body)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
 });
 
 ballMagic.render();

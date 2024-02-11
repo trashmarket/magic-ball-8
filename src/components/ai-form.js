@@ -8,7 +8,7 @@ import {
   KEYAI_INPUT_TEXT_ACTIVE,
   KEYAI_BUTTON,
   KEYAI_BUTTON_ACTIVE,
-  KEYAI
+  KEYAI,
 } from "../constants/constants";
 
 export default class AiForm {
@@ -21,24 +21,29 @@ export default class AiForm {
     this._form = this._formTemplate.querySelector(glueTheDote(KEYAI));
     this._sliderBox = this._formTemplate.querySelector(glueTheDote(KEYAI_BOX));
     this._slider = this._formTemplate.querySelector(glueTheDote(KEYAI_SLIDER));
-    this._input = this._formTemplate.querySelector(glueTheDote(KEYAI_INPUT_TEXT));
+    this.input = this._formTemplate.querySelector(
+      glueTheDote(KEYAI_INPUT_TEXT)
+    );
     this._button = this._formTemplate.querySelector(glueTheDote(KEYAI_BUTTON));
   }
 
-  handle = (event) => {
+  handleClick = (event) => {
     if (
       event.target.classList.contains(KEYAI_BOX) ||
       event.target.classList.contains(KEYAI_SLIDER)
     ) {
-      this._toggle([this._slider, this._input, this._button]);
+      localStorage.getItem("keyChat")
+        ? (this.input.value = localStorage.getItem("keyChat"))
+        : (this.input.value = "");
+      this._toggle([this._slider, this.input, this._button]);
     }
   };
 
   _toggle(arr) {
     const reg = /^\b[a-z]+_{2}[a-z-]+[a-z]+\b/i;
 
-    arr.forEach(item => {
-      const selector = item.className.match(reg)[0] + '_active';
+    arr.forEach((item) => {
+      const selector = item.className.match(reg)[0] + "_active";
       item.classList.toggle(selector);
     });
   }
@@ -46,11 +51,11 @@ export default class AiForm {
   handleSubmite = (event) => {
     event.preventDefault();
     this._callBack();
-  }
+  };
 
   render() {
     this._page.append(this._formTemplate);
-    this._sliderBox.addEventListener("click", this.handle);
-    this._form.addEventListener('submit', this.handleSubmite)
+    this._sliderBox.addEventListener("click", this.handleClick);
+    this._form.addEventListener("submit", this.handleSubmite);
   }
 }

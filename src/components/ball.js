@@ -13,6 +13,9 @@ import {
 import { glueTheDote } from "../utils";
 
 export default class Ball {
+
+  methodApi = 'GET'
+
   constructor(idTemplate, pageSelector, callback) {
     this._template = document
       .getElementById(idTemplate)
@@ -74,7 +77,7 @@ export default class Ball {
 
   handleSubmite = (event) => {
     event.preventDefault();
-    this._callback();
+    this._callback(this.methodApi);
     this.setRequest();
   };
 

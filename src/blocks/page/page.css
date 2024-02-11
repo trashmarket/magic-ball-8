@@ -2,5 +2,13 @@
   font-family: 'Open sans', Arial, Helvetica, sans-serif;
   background-color: var(--limeColor);
   max-width: 1450px;
-  margin: auto;
+  margin: 0 auto;
+  /* display: flex; */
+  width: 73%;
 }
+
+/* @media screen and (max-width: 600px) {
+  .page {
+    flex-direction: column;
+  }
+} */
