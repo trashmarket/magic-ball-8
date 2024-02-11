@@ -3,5 +3,10 @@
   width: 320px;
   min-height: 200px;
   border-radius: 9px;
-  z-index: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .keyAI {
+    width: 100%;
+  }
 }

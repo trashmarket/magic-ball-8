@@ -4,8 +4,23 @@
   margin-left: 12.13%;
 }
 
-/* @media screen and (max-width: 600px) {
+@media screen and (max-width: 1536px) {
   .ball {
-    width: 100%;
+    margin-left: 1.13%;
   }
-} */
+}
+
+@media screen and (max-width: 600px) {
+  .ball {
+    width: 300px;
+    height: 300px;
+    margin-left: 0;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .ball {
+    width: 230px;
+  }
+}

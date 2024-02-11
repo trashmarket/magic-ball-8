@@ -1,3 +1,4 @@
 .ball__form {
-  display: none;
+  /* display: none; */
+  visibility: hidden;
 }

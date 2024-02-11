@@ -1,4 +1,5 @@
-.ball__from_active {
+.ball__form_active {
+  visibility: visible;
   display: flex;
   justify-content: space-between;
   margin-bottom: 22px;

@@ -1,18 +1,39 @@
 .ball__triangle {
   width: 0;
   position: absolute;
-	border-left: 50px solid transparent;
-	border-right: 50px solid transparent;
-	border-top: 80px solid var(--blue);
-  top: 296px;
-  right: 168px;
+  border-left: 78px solid transparent;
+  border-right: 78px solid transparent;
+  border-top: 137px solid var(--blue);
+  right: 140px;
+  top: 277px;
   opacity: 1;
   animation: opacity 3s linear 2s infinite;
   cursor: pointer;
   transition: all .8s;
 }
 
+
 @keyframes opacity {
   50% { opacity: 0;}
   100% {opacity: 1;}
+}
+
+@media screen and (max-width: 600px) {
+  .ball__triangle {
+    border-left: 55px solid transparent;
+    border-right: 55px solid transparent;
+    border-top: 93px solid var(--blue);
+    right: 94px;
+    top: 221px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .ball__triangle {
+    border-left: 43px solid transparent;
+    border-right: 43px solid transparent;
+    border-top: 73px solid var(--blue);
+    right: 72px;
+    top: 193px;   
+  }
 }

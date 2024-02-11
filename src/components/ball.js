@@ -8,7 +8,6 @@ import {
   BALL_P,
   BALL_LOADER,
   BALL_LOADER_ACTIVE,
-  redux
 } from "../constants/constants";
 import { glueTheDote } from "../utils";
 
@@ -37,28 +36,34 @@ export default class Ball {
     this._loader.classList.toggle(BALL_LOADER_ACTIVE)
   } 
 
-  _handleEscClose = (event) => {
+  handleEscClose = (event) => {
     if (event.code === "Escape") {
       this._closeBall();
     }
   };
 
+  handleTransitionend = (event) => {
+    this._form.classList.add(BALL_FORM_ACTIVE)
+  }
+
   _closeBall = () => {
     this._addOrRemoveClasses("remove");
-    document.removeEventListener("keydown", this._handleEscClose);
+    document.removeEventListener("keydown", this.handleEscClose);
+    document.removeEventListener('transitionend', this.handleTransitionend);
+    this._form.classList.remove(BALL_FORM_ACTIVE)
     this._p.textContent = ''
   };
 
   _addOrRemoveClasses = (payload) => {
     this._ballTriangle.classList[payload](BALL_TRIANGLE_ACTIVE);
     this._closeIcon.classList[payload](BALL_CLOSE_ICON_ACTIVE);
-    this._form.classList[payload](BALL_FORM_ACTIVE);
   };
 
   _openBall = () => {
     this._addOrRemoveClasses("add");
     this._form.elements["queistion"].focus();
-    document.addEventListener("keydown", this._handleEscClose);
+    document.addEventListener("keydown", this.handleEscClose);
+    document.addEventListener("transitionend", this.handleTransitionend)
   };
 
   handle = (event) => {

@@ -11,3 +11,15 @@
   border-radius: 9px;
   cursor:default;
 }
+
+@media screen and (max-width: 580px) {
+  .ball__triagle_active {
+    right: -3px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .ball__triagle_active {
+    width: 264px;
+  }
+}
