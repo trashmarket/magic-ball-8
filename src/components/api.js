@@ -8,9 +8,11 @@ export default class Api {
   }
 
   _checkRes(res) {
-    if (res.ok) return res.json();
+    if (res.ok)  return res.json();
+    
+    if (res.status === 429) return res.json().then(res => Promise.reject(res.error.message));
 
-    return Promise.reject(res.json());
+    return Promise.reject(res.status);
   }
 
   getFetch(payload, port) {

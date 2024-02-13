@@ -47,8 +47,18 @@ const ballMagic = new Ball(TEMPLATE_ID, PAGE_SELECTOR, function (method) {
   method === "POST" &&
     api
       .postFetch("chat", "3001", body)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        setTimeout(() => {
+          this.setRequest();
+          this.typingText(res.choices[0].message.content);
+        }, 1000);
+      })
+      .catch((err) => {
+        setTimeout(() => {
+          this.setRequest();
+          this.typingText(err);
+        }, 1000);
+      });
 });
 
 ballMagic.render();

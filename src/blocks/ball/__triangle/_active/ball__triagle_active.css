@@ -10,6 +10,7 @@
   box-sizing: border-box;
   border-radius: 9px;
   cursor:default;
+  word-wrap: break-word;
 }
 
 @media screen and (max-width: 580px) {

@@ -46,7 +46,6 @@ const server = http.createServer((req, res) => {
             res.end(JSON.stringify(res));
           })
           .catch((error) => {
-            console.log(error.status)
             res.writeHead(error.status, { "Content-Type": "application/json" });
             res.end(JSON.stringify(error));
           });
